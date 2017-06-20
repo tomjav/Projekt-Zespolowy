@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div>
+      <h4>Zaplanowane wizyty</h4>
+      <table class="table table-striped table-hover" *ngIf="appointments[0] !== undefined">
+        <thead>
+        <tr>
+          <th>Data</th>
+          <th>Godzina</th>
+          <th>Pacjent</th>
+          <th>Usuń</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let appointment of appointments">
+          <td>{{appointment.date | date: 'yyyy-MM-dd'}}</td>
+          <td>{{appointment.hour+':00'}}</td>
+          <td>{{appointment.patient.name}} {{appointment.patient.surname}}</td>
+          <td><span class="glyphicon glyphicon-trash med-pointer" (click)="cancelAppoint(appointment)"></span></td>
+        </tr>
+        </tbody>
+      </table>
+      <p *ngIf="appointments[0] === undefined">Brak zarejestrowanych wizyt</p>
+    </div>
+  </div>
+</div>

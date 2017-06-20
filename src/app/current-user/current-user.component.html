@@ -1,0 +1,10 @@
+<button *ngIf="currentName === null" (click)="onClickPopup()" type="button" class="btn btn-primary"
+        data-toggle="modal" data-target="#login-modal">Zaloguj
+</button>
+<med-login (logged)='success($event)'></med-login>
+
+<!--zalogowany-->
+<div *ngIf="currentName !== null">
+  <span>{{currentName}} {{currentSurname}}</span>
+  <button (click)="logout()" type="button" class="btn btn-primary">wyloguj</button>
+</div>

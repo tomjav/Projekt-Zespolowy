@@ -1,0 +1,13 @@
+<div>
+  <h3>Tytuł: <span>{{card.documentation.title}}</span></h3>
+  <h4>Opis: <span>{{card.documentation.text}}</span></h4>
+  <h4>Data: <span>{{card.documentation.timeOfInscription | date}}</span></h4>
+  <h4>Lekarz: <span>
+    {{card.documentation.employee.surname}}
+    {{card.documentation.employee.name}}
+  </span></h4>
+  <h4>Pliki: <span>{{card.documentation.Files}}</span></h4>
+  <!--<button (click)="onEditClick()" type="button" class="btn btn-primary">Edytuj</button>-->
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Edytuj</button>
+  <med-card-edit [card]="card"></med-card-edit>
+</div>

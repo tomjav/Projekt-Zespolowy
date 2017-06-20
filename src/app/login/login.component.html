@@ -1,0 +1,48 @@
+<div class="container">
+
+  <div class="modal fade" id="login-modal" role="dialog">
+    <div class="modal-dialog">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Logowanie</h4>
+        </div>
+
+
+
+        <div class="alert alert-success">
+          {{error}}
+        </div>
+
+
+        <div class="modal-body">
+                    <!--FORM-->
+
+          <form #editCardForm="ngForm" (ngSubmit)="login(editCardForm, $event)">
+            <div class="form-group">
+              <label id="labelUsername" for="username">Login</label>
+              <input name="username"
+                     type="title" class="form-control" id="username"
+                     placeholder="Nazwa użytkownika" ngModel>
+            </div>
+            <div class="form-group">
+              <label id="labelPassword" for="password">Hasło</label>
+              <input name="password"
+                     type="password" class="form-control" id="password" placeholder="Hasło" ngModel>
+            </div>
+
+            <button type="submit" class="btn btn-default">Zatwierdź</button>
+          </form>
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" #closeBtn>Zamknij</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

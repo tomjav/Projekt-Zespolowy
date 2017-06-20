@@ -1,0 +1,25 @@
+<div>
+  <h4>Wybierz termin:</h4>
+  <div class="table-responsive table-scroll">
+  <table class="table table-striped table-hover" *ngIf="appointments[0] !== undefined">
+    <thead>
+    <tr>
+      <th>Data</th>
+      <th>Godzina</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let appointment of appointments" (click)="onSelectAppointment(appointment)">
+      <td>{{appointment.date | date: 'yyyy-MM-dd'}}</td>
+      <td>{{appointment.hour+':00'}}</td>
+    </tr>
+    </tbody>
+  </table>
+  <p *ngIf="appointments[0] === undefined" >
+    Brak wolnych terminów
+  </p>
+</div>
+</div>
+
+
+

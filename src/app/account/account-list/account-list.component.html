@@ -1,0 +1,22 @@
+<div>
+  <h4>Wybierz konto do edycji:</h4>
+  <div class="table-responsive table-scroll">
+    <table class="table table-striped table-hover">
+      <thead>
+      <tr>
+        <th>Nazwa użytkownika</th>
+        <th>Rola</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let account of accounts" (click)="onChosenAccount(account)">
+        <td>{{account.username}}</td>
+        <td>{{account.role.role}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+

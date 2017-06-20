@@ -1,0 +1,15 @@
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: rgba(91, 183, 168, 0.4);
+}
+
+.table-scroll {
+  height: 400px !important;
+  overflow-y: scroll;
+  margin: 0px;
+  padding: 0px;
+}
+
+#card:hover {
+  cursor: pointer;
+}
+

@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <h1>Wizyty
+      <span *ngIf="employee"> > {{employee.surname}}</span>
+      <span *ngIf="appointment"> > {{appointment.date | date: 'yyyy-MM-dd'}} {{appointment.hour+':00'}}</span>
+    </h1>
+    <div class="col-md-4">
+      <employee-list (chosenEmployee)='onNotifyEmployee($event)'></employee-list>
+    </div>
+    <div class="col-md-4">
+      <appointment-list
+        *ngIf="employee !== undefined"
+        [employee]="employee"
+        [toRemoved]="toRemoved"
+        (chosenAppointment)='onNotifyAppointment($event)'
+      >
+      </appointment-list>
+    </div>
+    <div class="col-md-4">
+      <div *ngIf="success" class="alert alert-success">
+        <strong>Wizyta została zarejestrowana!</strong>
+      </div>
+      <button type="button" class="btn btn-success" *ngIf="appointment" (click)="arrangeAppointment()">Umów wizytę</button>
+    </div>
+  </div>
+</div>

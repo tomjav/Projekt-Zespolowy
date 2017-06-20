@@ -1,0 +1,40 @@
+<div class="container">
+
+  <div class="row" *ngIf="patient === undefined">
+    <div class="col-md-4">
+      <patient-search></patient-search>
+    </div>
+    <div class="col-md-8">
+      <patient-list (choosenPatientId)='onNotify($event)'></patient-list>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="patient !== undefined">
+
+    <div class="panel panel-default" style="min-height: 500px">
+      <div class="panel-heading">Dokumentacja Pacjenta</div>
+      <div class="panel-body">
+        <div class="col-md-4">
+          <patient-details [patient]="patient"></patient-details>
+          <button (click)="reset()" type="button" class="btn btn-primary">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            Lista pacjentow
+          </button>
+        </div>
+        <div class="col-md-8">
+          <patient-card-list
+            (chosenCard)='onNotifyCard($event)'
+            *ngIf="patientCard === undefined"
+            [patient]="patient"
+          >
+          </patient-card-list>
+          <patient-card *ngIf="patientCard !== undefined" [card]="patientCard"></patient-card>
+          <button (click)="resetCard()" *ngIf="patientCard !== undefined" type="button" class="btn btn-primary">
+            Wszystkie dokumentacje
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

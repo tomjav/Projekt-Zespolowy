@@ -1,0 +1,24 @@
+<div>
+  <h4>Wybierz lekarza:</h4>
+  <div class="table-responsive table-scroll">
+    <table class="table table-striped table-hover">
+    <thead>
+    <tr>
+      <th>Imię</th>
+      <th>Nazwisko</th>
+      <th>Specjalizacja</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let employee of employees" (click)="onChosenEmployee(employee)">
+      <td>{{employee.name}}</td>
+      <td>{{employee.surname}}</td>
+      <td>{{employee.employeeType.title}}</td>
+    </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+
+

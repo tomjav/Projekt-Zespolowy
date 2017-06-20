@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <h1>Edycja kont użytkowników</h1>
+    <div class="col-md-4">
+      <account-list (chosenAccount)='onChooseAccount($event)'></account-list>
+    </div>
+    <div class="col-md-8">
+      <account-edit *ngIf="chosenAccount" [chosenAccount]="chosenAccount"></account-edit>
+    </div>
+  </div>
+</div>
+

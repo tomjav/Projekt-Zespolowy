@@ -1,0 +1,31 @@
+<!--<div class="row">-->
+<!--<ul class="nav nav-tabs" id="menu">-->
+<!--<li (click)="onClick($event)" class="nav-item">-->
+<!--<a class="nav-link active" [routerLink] = "['/start']">Start</a>-->
+<!--</li>-->
+<!--<li class="nav-item">-->
+<!--<a class="nav-link" [routerLink] = "['/karta-pacjenta']">Karta pacjenta</a>-->
+<!--</li>-->
+<!--<li class="nav-item">-->
+<!--<a class="nav-link" [routerLink] = "['/wizyty']">Wizyty</a>-->
+<!--</li>-->
+<!--<li class="nav-item">-->
+<!--<a class="nav-link" [routerLink] = "['/kalendarz']">Kalendarz</a>-->
+<!--</li>-->
+<!--<li class="nav-item">-->
+<!--<a class="nav-link" [routerLink] = "['/moje-konto']">Moje Konto</a>-->
+<!--</li>-->
+<!--</ul>-->
+<!--</div>-->
+
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <span class="glyphicon glyphicon-home navbar-brand"></span>
+    </div>
+    <ul *ngFor="let option of menuOptions" class="nav navbar-nav">
+      <li><a [routerLink]=option>{{option}}</a></li>
+    </ul>
+  </div>
+</nav>
